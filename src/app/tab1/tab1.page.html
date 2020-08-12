@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="getOrientation()">Get Screen Orientation</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-label>Mode:- {{screen_orientation}}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="lockOrientation()"
+        >Lock Screen Orientation</ion-button
+      >
+      <ion-select [(ngModel)]="screen_orientation_lock">
+        <ion-select-option value="LANDSCAPE_PRIMARY"
+          >LANDSCAPE_PRIMARY</ion-select-option
+        >
+        <ion-select-option value="PORTRAIT_PRIMARY"
+          >PORTRAIT_PRIMARY</ion-select-option
+        >
+        <ion-select-option value="LANDSCAPE_SECONDARY"
+          >LANDSCAPE_SECONDARY</ion-select-option
+        >
+        <ion-select-option value="LANDSCAPE">LANDSCAPE</ion-select-option>
+        <ion-select-option value="PORTRAIT">PORTRAIT</ion-select-option>
+        <ion-select-option value="CURRENT">CURRENT</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="UnlockOrientation()"
+        >Unlock Screen Orientation</ion-button
+      >
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      Orientation_changed_event: {{screen_orientation_event}}
+    </ion-col>
+  </ion-row>
+</ion-content>
